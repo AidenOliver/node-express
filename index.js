@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const promoRouter = require('./routes/promoRouter');
 const dishRouter = require('./routes/dishRouter');
+const leaderRouter = require('./routes/leaderRouter');
 const hostname = 'localhost';
 const port = 3000;
 
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 
 app.use('/promotions', promoRouter);
 app.use('/dishes', dishRouter);
-
+app.use('/leaders', leaderRouter);
 app.use(express.static(__dirname + '/public'));
 
 app.use((req, res, next) => {
